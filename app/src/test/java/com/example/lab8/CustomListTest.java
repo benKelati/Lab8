@@ -1,6 +1,7 @@
 package com.example.lab8;
 
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -27,11 +28,13 @@ public class CustomListTest {
     }
 
     @Test
-    public void deleteCityTest(){
+    public void hasCityTest(){
         list = MockCityList();
-        int listSize = list.getCount();
-        list.deleteCity(new City("Estevan", "SK"));
-        assertEquals(list.getCount(), listSize-1);
+        City city = new City("Estevan", "SK");
+        list.addCity(city);
+        assertTrue(list.hasCity(city));
     }
+
+
 
 }
